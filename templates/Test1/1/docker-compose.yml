@@ -1,0 +1,13 @@
+web:
+  build: .
+  volumes:
+    - "../app:/app"
+  ports:
+    - "3030:3000"
+    links:
+    -db
+
+db:
+  image: mariadb
+  ports: 
+    - '3306:3306'
